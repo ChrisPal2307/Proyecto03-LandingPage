@@ -210,10 +210,7 @@
               class="bg-primary-container text-on-primary-container font-label-md px-stack-lg py-stack-md rounded-none font-bold uppercase tracking-widest hover:brightness-110 transition-all shadow-[8px_8px_0px_0px_rgba(86,31,0,0.3)]">
               Ver Catálogo de Stock
             </button>
-            <button
-              class="border border-outline-variant font-label-md px-stack-lg py-stack-md rounded-none font-bold uppercase tracking-widest text-on-surface hover:bg-surface-container transition-all">
-              Visítanos en Tienda
-            </button>
+            <a href="#contact" class="border border-outline-variant font-label-md px-stack-lg py-stack-md rounded-none font-bold uppercase tracking-widest text-on-surface hover:bg-surface-container transition-all">Visítanos en Tienda</a>
           </div>
         </div>
       </div>
@@ -374,7 +371,7 @@
           <div class="bg-surface-container p-stack-lg border border-outline-variant flex flex-col justify-between">
             <p class="font-body-md text-on-surface italic mb-8">
               "Buscaba un repuesto crítico para mi transmisión y no lo encontraba en ninguna cadena grande. Consulté
-              aquí, me confirmaron el stock de inmediato y pude retirarlo el mismo día. Excelente gestión."
+              aquí, me confirmaron el stock de inmediato y pude retirarlo el mismo día. Excelente servicio."
             </p>
             <div class="flex items-center gap-stack-md">
               <div
@@ -437,20 +434,20 @@
           </div>
 
 
-          <form class="space-y-stack-md">
+          <form id="saveForm" class="space-y-stack-md">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
-              <input
+              <input id="form-fullname"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 placeholder="Nombre Completo" type="text" required />
 
-              <input
+              <input id="form-whatsapp"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 placeholder="Número de WhatsApp" type="tel" required />
             </div>
 
             <!-- Fila 2: Tipo de servicio y Fecha propuesta -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
-              <select
+              <select id="form-service"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 required>
                 <option value="" disabled selected>Servicio</option>
@@ -461,11 +458,13 @@
               </select>
 
               <input
+                id="form-date"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 type="date" required />
             </div>
 
             <textarea
+              id="form-details"
               class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
               placeholder="Detalles de la bicicleta" rows="4" required></textarea>
 
