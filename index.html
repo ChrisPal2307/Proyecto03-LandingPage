@@ -435,7 +435,7 @@
 
 
           <form id="saveForm" class="space-y-stack-md">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+            <div id="form-div-contact" class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
               <input id="form-fullname"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 placeholder="Nombre Completo" type="text" required />
@@ -446,7 +446,7 @@
             </div>
 
             <!-- Fila 2: Tipo de servicio y Fecha propuesta -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+            <div id="form-div-service" class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
               <select id="form-service"
                 class="w-full bg-surface-container-highest border border-outline-variant p-4 font-label-sm text-on-surface focus:border-primary-container focus:ring-0 rounded-none"
                 required>
@@ -558,6 +558,8 @@
       });
     });
   </script>
+
+  <script type="module" src="./src/js/index.js" defer></script>
 </body>
 
 </html>

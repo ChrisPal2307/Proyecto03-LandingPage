@@ -18,37 +18,41 @@ const database = getDatabase(app);
 
 const saveForm = async (formData) => {
 
+
+  let ref = ref(database, "serviceRequests");
+  let newRef = push(ref);
   try {
-    let ref = push(ref(database, "serviceRequests"));
-    let newRefawait = push(ref);
-    
-    let response = await set(newRefawait, {
+    let response = await set(newRef, {
 
-        fullname: formData.fullname,
-        whatsapp: formData.whatsapp,
-        service: formData.service,
-        date: formData.date,
-        details: formData.details,
-        timestamp: Date.now()
-
+      fullname: formData.fullname,
+      whatsapp: formData.whatsapp,
+      service: formData.service,
+      date: formData.date,
+      details: formData.details,
+      timestamp: Date.now()
 
     });
 
     return response
-    .then(() => {
-        console.log("Data saved successfully!");
-    })
-    .catch((error) => {
-        console.error("Error saving data:", error);
-        throw error;
-    });
-
+      .then(() => {
+        return {
+          success: true,
+          message: "Data saved successfully!"
+        };
+      })
+      .catch((error) => {
+        return {
+          success: false,
+          message: "Error saving data: " + error.message
+        };
+      });
 
   } catch (error) {
-    console.error("Error saving data:", error);
-    throw error;
-  };
-
+    return {
+      success: false,
+      message: "Error saving data: " + error.message
+    };
+  }
 };
-    
+
 export { ref, set, push, get, child };
