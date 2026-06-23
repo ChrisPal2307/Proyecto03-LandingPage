@@ -1,6 +1,6 @@
 "use strict";
 
-
+import {saveForm} from "./firebase.js";
 
 const enableform = () => {
   const form = document.getElementById("saveForm");

@@ -55,4 +55,4 @@ const saveForm = async (formData) => {
   }
 };
 
-export { ref, set, push, get, child };
+export { ref, set, push, get, child, saveForm };
