@@ -17,35 +17,23 @@ const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
 const saveForm = async (formData) => {
-
-
-  let ref = ref(database, "serviceRequests");
-  let newRef = push(ref);
+  let ref1 = ref(database, "serviceRequests");
+  let newRef = push(ref1);
+  
   try {
-    let response = await set(newRef, {
-
+    await set(newRef, {
       fullname: formData.fullname,
       whatsapp: formData.whatsapp,
       service: formData.service,
       date: formData.date,
       details: formData.details,
       timestamp: Date.now()
-
     });
 
-    return response
-      .then(() => {
-        return {
-          success: true,
-          message: "Data saved successfully!"
-        };
-      })
-      .catch((error) => {
-        return {
-          success: false,
-          message: "Error saving data: " + error.message
-        };
-      });
+    return {
+      success: true,
+      message: "Data saved successfully!"
+    };
 
   } catch (error) {
     return {
